@@ -1,0 +1,327 @@
+@font-face {
+  font-family: studiofeixen-variable;
+  src: url(../fonts/studio-feixen-sans-variable.woff2) format("woff2"), url(../fonts/studio-feixen-sans-variable.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Bold.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Bold.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Bold.woff) format("woff"), url(../fonts/StudioFeixenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Book.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Book.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Book.woff) format("woff"), url(../fonts/StudioFeixenSans-Book.ttf) format("truetype");
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Medium.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Medium.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Medium.woff) format("woff"), url(../fonts/StudioFeixenSans-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Regular.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Regular.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Regular.woff) format("woff"), url(../fonts/StudioFeixenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: studiofeixen-writer;
+  src: url(../fonts/StudioFeixenSansWriter-Regular.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSansWriter-Regular.woff2) format("woff2"), url(../fonts/StudioFeixenSansWriter-Regular.woff) format("woff"), url(../fonts/StudioFeixenSansWriter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html[data-theme="light"] {
+  --background-color: #bcccdc;
+  --color: #041d36;
+}
+
+html[data-theme="dark"] {
+  --background-color: #041d36;
+  --color: #f0f4f8;
+}
+
+.scrollable-container {
+  overflow: hidden;
+}
+
+:root {
+  --rem: 16;
+  --left-right-internal-margin: 24px;
+  --top-margin-mobile: 40vh;
+  --top-internal-margin: 24px;
+  --border-radius-content: 0;
+  --left-right-margin: 48px;
+  --border: 1.5px;
+  --border-radius: 24px;
+  --innerVh: 7.06px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: 0 200px;
+}
+
+.contact-title {
+  width: 100%;
+  text-align: left;
+  color: var(--color);
+  font-family: 'studiofeixen-variable', 'studiofeixen', Arial, Helvetica, sans-serif;
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.contact-title h2 {
+  text-transform: uppercase;
+  font-family: 'studiofeixen-variable', Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 500, "wdth" 125;
+  margin: 0;
+  font-size: 3rem;
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color);
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'studiofeixen-variable', 'studiofeixen', Arial, Helvetica, sans-serif;
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.contact-left,
+.contact-right {
+  width: 50%;
+}
+
+table {
+  margin-top: 10px;
+  width: auto;
+  border-collapse: collapse;
+  margin-bottom: var(--top-internal-margin);
+  table-layout: auto;
+}
+
+table td {
+  vertical-align: top;
+  padding: 0 24px 0 0;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+.contact-left table td h6,
+.contact-right table td h6 {
+  /* display: inline-block; */
+  margin: 0;
+  padding-right: 24px;
+  font-family: 'studiofeixen-variable', 'studiofeixen', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 800, "wdth" 125;
+  font-size: 1.25rem;
+  font-weight: unset;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: clip;
+  text-overflow: ellipsis;
+}
+
+.contact-right ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.contact-right ul li {
+  list-style: none;
+  /* margin-bottom: 24px; */
+  padding: 0;
+  width: fit-content;
+}
+
+table td a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color);
+  font-family: 'studiofeixen-variable', 'studiofeixen', Arial, Helvetica, sans-serif;
+  text-transform: lowercase;
+  font-size: 1.25rem;
+  font-variation-settings: "wght" 500, "wdth" 125;
+  margin: 0;
+}
+
+table tr:last-child td {
+  vertical-align: top;
+  padding: 0 24px 0 0;
+  width: auto;
+  min-width: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+.link-underline a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-family: 'studiofeixen-variable', Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 500, "wdth" 125;
+  text-transform: lowercase;
+  position: relative;
+  margin-bottom: 24px;
+  color: var(--color);
+}
+
+.link-underline a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--color);
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.link-underline a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 1382px) {
+  .contact {
+    margin: 0 90px;
+  }
+}
+
+@media (max-width: 1185px) {
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table td {
+    width: 50%;
+  }
+
+  .link-underline a {
+    width: fit-content;
+  }
+
+  .contact-left .link-underline a::after {
+    bottom: -2px;
+  }
+}
+
+@media (max-width: 992px) {
+  .contact {
+    margin: 50px 50px 0 50px;
+  }
+
+  .contact-left table td h6,
+  .contact-right table td h6 {
+    font-size: 1rem;
+  }
+
+  .link-underline a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 678px) {
+  .scrollable-container {
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .scrollable-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .contact {
+    margin: 100px 20px 0 20px;
+  }
+
+  table {
+    margin-bottom: 0;
+  }
+
+  table tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  table td {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .scrollable-container {
+    overflow: hidden;
+  }
+
+  .contact {
+    margin: 0 10px;
+  }
+
+  .contact-title h2 {
+    font-size: 2rem;
+  }
+}
+
+@keyframes easeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

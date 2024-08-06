@@ -1,0 +1,359 @@
+@font-face {
+  font-family: studiofeixen-variable;
+  src: url(../fonts/studio-feixen-sans-variable.woff2) format("woff2"), url(../fonts/studio-feixen-sans-variable.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Bold.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Bold.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Bold.woff) format("woff"), url(../fonts/StudioFeixenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Book.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Book.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Book.woff) format("woff"), url(../fonts/StudioFeixenSans-Book.ttf) format("truetype");
+  font-weight: 350;
+  font-style: normal
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Medium.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Medium.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Medium.woff) format("woff"), url(../fonts/StudioFeixenSans-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: studiofeixen;
+  src: url(../fonts/StudioFeixenSans-Regular.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSans-Regular.woff2) format("woff2"), url(../fonts/StudioFeixenSans-Regular.woff) format("woff"), url(../fonts/StudioFeixenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: studiofeixen-writer;
+  src: url(../fonts/StudioFeixenSansWriter-Regular.eot) format("embedded-opentype"), url(../fonts/StudioFeixenSansWriter-Regular.woff2) format("woff2"), url(../fonts/StudioFeixenSansWriter-Regular.woff) format("woff"), url(../fonts/StudioFeixenSansWriter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+html[data-theme="light"] {
+  --background-color: #bcccdc;
+  --color: #041d36;
+  --primary-color: #041d36;
+  --wave-image: url(../../wave-light.svg);
+}
+
+html[data-theme="dark"] {
+  --background-color: #bcccdc;
+  --color: #f0f4f8;
+  --primary-color: #bcccdc;
+  --wave-image: url(../../wave.svg);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color);
+  letter-spacing: -.015em;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.intro h1 {
+  font-family: studiofeixen, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  font-weight: 800;
+  font-variation-settings: "wght" 800, "wdth" 100;
+  font-size: 3rem;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary-color);
+  text-stroke: 2px var(--primary-color);
+  text-fill-color: transparent;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.name {
+  display: inline-block;
+  position: relative;
+  font-family: studiofeixen-variable, studiofeixen, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-variation-settings: "wght" 500, "wdth" 125;
+  letter-spacing: normal;
+  color: var(--primary-color);
+  margin: 0 10px;
+}
+
+.wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  background-image: var(--wave-image);
+  background-repeat: repeat-x;
+  background-position-x: 0;
+  background-position-y: bottom;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  animation: wave 8s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes wave {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.name:hover .wave {
+  animation-play-state: running;
+}
+
+.intro p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: studiofeixen-variable, studiofeixen, Arial, Helvetica, sans-serif;
+  letter-spacing: -.015em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: unset;
+  pointer-events: auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.25rem;
+  margin: 0;
+  font-variation-settings: "wght" 500, "wdth" 100;
+  text-transform: none;
+  transform: none;
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.intro-link {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  opacity: 0;
+  animation: easeInFromTop 0.5s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.intro-link a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'studiofeixen-variable', Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" 500, "wdth" 125;
+  text-transform: lowercase;
+  position: relative;
+}
+
+.intro-link p {
+  margin: 0;
+  font-weight: unset;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'studiofeixen-variable', Arial, Helvetica, sans-serif;
+}
+
+.intro p,
+.intro-link a,
+.intro-link p {
+  color: var(--color);
+}
+
+.intro-link a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: var(--color);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.4s ease-out;
+}
+
+.intro-link a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+
+  .intro {
+    margin-bottom: 20px;
+  }
+
+  .intro h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: block;
+    -webkit-text-stroke: 1.25px var(--primary-color);
+    font-weight: 800;
+  }
+
+  .name {
+    display: block;
+    margin: auto;
+    font-size: 1.5rem;
+    width: fit-content;
+    align-items: center;
+    -webkit-text-stroke: 1.25px var(--primary-color);
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .intro-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .intro-link .icon {
+    font-size: 1rem;
+  }
+
+  .intro-link a {
+    font-size: 1rem;
+  }
+
+  .intro-link p {
+    font-size: 1rem;
+  }
+}
+
+.noise {
+  position: fixed;
+  z-index: -2;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  animation: grain 7s steps(10) infinite;
+  background-image: url(../../noise.png);
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: .25;
+  pointer-events: none
+}
+
+@keyframes grain {
+
+  0%,
+  to {
+    transform: translate(0)
+  }
+
+  10% {
+    transform: translate(-5%, -10%)
+  }
+
+  20% {
+    transform: translate(-15%, 5%)
+  }
+
+  30% {
+    transform: translate(7%, -25%)
+  }
+
+  40% {
+    transform: translate(-5%, 25%)
+  }
+
+  50% {
+    transform: translate(-15%, 10%)
+  }
+
+  60% {
+    transform: translate(15%)
+  }
+
+  70% {
+    transform: translateY(15%)
+  }
+
+  80% {
+    transform: translate(3%, 35%)
+  }
+
+  90% {
+    transform: translate(-10%, 10%)
+  }
+}
+
+@keyframes easeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
